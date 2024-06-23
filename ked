@@ -1,0 +1,32 @@
+@prefix ex: <http://example.pl#/> .
+
+ex:KolekcjaKlas
+    ex:Klasa [
+        ex:nazwaKlasy "1A" ;
+        ex:iloscLudzi 25 ;
+        ex:wychowawca [
+            ex:imię "Jan" ;
+            ex:nazwisko "Kowalski"
+        ]
+    ], [
+        ex:nazwaKlasy "2B" ;
+        ex:iloscLudzi 30 ;
+        ex:wychowawca [
+            ex:imię "Anna" ;
+            ex:nazwisko "Nowak"
+        ]
+    ], [
+        ex:nazwaKlasy "3C" ;
+        ex:iloscLudzi 28 ;
+        ex:wychowawca [
+            ex:imię "Piotr" ;
+            ex:nazwisko "Wiśniewski"
+        ]
+    ], [
+        ex:nazwaKlasy "4D" ;
+        ex:iloscLudzi 26 ;
+        ex:wychowawca [
+            ex:imię "Magdalena" ;
+            ex:nazwisko "Lewandowska"
+        ]
+    ] .
