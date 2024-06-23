@@ -1,6 +1,65 @@
+| Typ danych          | Opis                                                                                                     | Przykład               |
+|---------------------|----------------------------------------------------------------------------------------------------------|------------------------|
+| anyType             | Typ danych ogólny, który może reprezentować dowolny inny typ danych XML. Jest to domyślny typ dla elementów, które nie mają określonego konkretnego typu danych.
+| anySimpleType       | Typ danych ogólny, który może reprezentować dowolny prosty typ danych XML. Jest używany, gdy potrzebujemy elastyczności w reprezentacji różnych typów danych prostych.
+| gYearMonth          | Typ danych reprezentujący rok i miesiąc w formacie YYYY-MM.                                               | 2005-12                |
+| gYear               | Typ danych reprezentujący rok w formacie YYYY.                                                            | 2010                   |
+| gMonthDay           | Typ danych reprezentujący miesiąc i dzień w formacie --MM-DD.                                            | --07-15                |
+| gDay                | Typ danych reprezentujący dzień w formacie ---DD.                                                         | ---25                  |
+| gMonth              | Typ danych reprezentujący miesiąc w formacie --MM.                                                        | --09                   |
+| base64Binary        | Typ danych reprezentujący sekwencję binarną zakodowaną w formacie Base64.                                 | SGVsbG8gV29ybGQ=       |
+| hexBinary           | Typ danych reprezentujący sekwencję binarną zakodowaną w formacie szesnastkowym (hexadecimal).            | 48656C6C6F20576F726C64 |
+| anyURI              | Typ danych reprezentujący wartość URI (Uniform Resource Identifier), np. adres internetowy.              | http://www.example.com |
+| normalizedString    | Typ danych reprezentujący ciąg znaków, w którym białe znaki zostały znormalizowane (spacje zostały zamienione na pojedyncze spacje). | This is a normalized string |
+| token               | Typ danych reprezentujący ciąg znaków, który jest tokenem, czyli ciągiem znaków oddzielonymi białymi znakami. | token123 token456      |
+| NMTOKEN             | Typ danych reprezentujący ciąg znaków, który jest tokenem bez białych znaków.                           | myNMTOKEN              |
+| Name                | Typ danych reprezentujący nazwę XML, zgodną z wymaganiami dla nazw elementów i atrybutów XML.            | ElementName            |
+| language            | Typ danych reprezentujący kod języka zgodny z RFC 3066.                                                  | en-US                  |
+| NCName              | Typ danych reprezentujący nazwę, która jest niemodyfikowaną wersją Name, czyli nazwą, która nie zawiera dwukropka i jest używana jako identyfikator XML. |ncName123|
+| ENTITY              | Typ danych reprezentujący nazwę encji XML.                                                                | myEntity               |
+| IDREF               | Typ danych reprezentujący referencję do identyfikatora (ID) elementu XML.                                | referenceToID          |
+| ID                  | Typ danych reprezentujący unikalny identyfikator (ID) elementu XML.                                       | myUniqueID             |
+| NMTOKENS            | Typ danych reprezentujący sekwencję tokenów NMTOKEN oddzielonych spacjami.                               | token1 token2 token3    |
+| ENTITIES            | Typ danych reprezentujący sekwencję nazw encji oddzielonych spacjami.                                    | entity1 entity2 entity3 |
+| IDREFS              | Typ danych reprezentujący sekwencję referencji do identyfikatorów (IDREF) oddzielonych spacjami.         | ref1 ref2 ref3         |
+| decimal             | Typ danych reprezentujący liczby dziesiętne (zmiennoprzecinkowe).                                         | 3.14159                |
+| integer             | Typ danych reprezentujący liczby całkowite.                                                               | 123                    |
+| string              | Typ danych reprezentujący ciąg znaków.                                                                    | Hello World            |
+
+
+
+Zadanie 4
+
+@prefix ex: <http://example.pl#> .
+ex:Maria_Curie ex:nagrodaNobla [ 
+ex:dziedzinaNobla “fizyka” ; 
+ex:rokNobla 1903 ; 
+ex:odkrycieNobla “promieniotwórczość” . ] ,
+[ ex:dziedzinaNobla “chemia” ;
+ex:rokNobla 1911 ;
+ex: odkrycieNobla “polon”, “rad” . ] .
+
+
+
+@prefix ex: <http://example.com/> .
+
+ex:Maria_Curie ex:otrzymałaNagrodę [
+    ex:dziedzinaNobla "fizyka" ;
+    ex:rokNobla 1903 ;
+    ex:odkrycieNobla "promieniotwórczość"
+] .
+
+ex:Maria_Curie ex:otrzymałaNagrodę [
+    ex:dziedzinaNobla "chemia" ;
+    ex:rokNobla 1911 ;
+    ex:odkrycieNobla "polon", "rad"
+] .
+
+Zadanie 5
+
 @prefix ex: <http://example.pl#/> .
 
-ex:KolekcjaKlas
+ex:Szkola
     ex:Klasa [
         ex:nazwaKlasy "1A" ;
         ex:iloscLudzi 25 ;
@@ -23,6 +82,45 @@ ex:KolekcjaKlas
             ex:nazwisko "Wiśniewski"
         ]
     ], [
+        ex:nazwaKlasy "4D" ;
+        ex:iloscLudzi 26 ;
+        ex:wychowawca [
+            ex:imię "Magdalena" ;
+            ex:nazwisko "Lewandowska"
+        ]
+    ] .
+
+Druga opcja.
+
+
+@prefix ex: <http://example.pl#/> .
+
+ex:KolekcjaKlas
+    ex:Klasa1 [
+        ex:nazwaKlasy "1A" ;
+        ex:iloscLudzi 25 ;
+        ex:wychowawca [
+            ex:imię "Jan" ;
+            ex:nazwisko "Kowalski"
+        ]
+    ] ,
+    ex:Klasa2 [
+        ex:nazwaKlasy "2B" ;
+        ex:iloscLudzi 30 ;
+        ex:wychowawca [
+            ex:imię "Anna" ;
+            ex:nazwisko "Nowak"
+        ]
+    ] ,
+    ex:Klasa3 [
+        ex:nazwaKlasy "3C" ;
+        ex:iloscLudzi 28 ;
+        ex:wychowawca [
+            ex:imię "Piotr" ;
+            ex:nazwisko "Wiśniewski"
+        ]
+    ] ,
+    ex:Klasa4 [
         ex:nazwaKlasy "4D" ;
         ex:iloscLudzi 26 ;
         ex:wychowawca [
