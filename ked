@@ -128,3 +128,50 @@ ex:KolekcjaKlas
             ex:nazwisko "Lewandowska"
         ]
     ] .
+
+
+Inne.
+Dokument RDF w oparciu o listę linkowaną
+turtle
+Skopiuj kod
+@prefix ex: <http://example.com/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfg: <http://www.w3.org/1999/02/22-rdf-syntax-ns#_> .
+
+ex:Maria_Curie ex:otrzymałaNagrody (
+    [
+        ex:dziedzinaNobla "fizyka" ;
+        ex:rokNobla 1903 ;
+        ex:odkrycieNobla "promieniotwórczość"
+    ]
+    [
+        ex:dziedzinaNobla "chemia" ;
+        ex:rokNobla 1911 ;
+        ex:odkrycieNobla "polon" ;
+        ex:odkrycieNobla "rad"
+    ]
+) .
+
+
+
+
+@prefix ex: <http://example.com/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ex:Maria_Curie ex:otrzymałaNagrody [
+    rdf:type rdf:Seq ;
+    rdf:_1 [
+        ex:dziedzinaNobla "fizyka" ;
+        ex:rokNobla 1903 ;
+        ex:odkrycieNobla "promieniotwórczość"
+    ] ;
+    rdf:_2 [
+        ex:dziedzinaNobla "chemia" ;
+        ex:rokNobla 1911 ;
+        ex:odkrycieNobla "polon", "rad"
+    ]
+] .
+
+
+
+
